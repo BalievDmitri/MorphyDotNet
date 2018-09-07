@@ -9,7 +9,7 @@ namespace MorphyDotNet.ExternalApi
     {
         public List<Parse> Parse(string word)
         {
-            return new List<Parse>() { new Parse() };
+            return new List<Parse>() { new Parse(word) };
         }
     }
 }
