@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DictUtils\ParadigmsReader.cs" />
+    <Compile Include="ExternalApi\Grammeme.cs" />
     <Compile Include="ExternalApi\MorphAnalyzer.cs" />
     <Compile Include="ExternalApi\Parse.cs" />
     <Compile Include="ExternalApi\Tag.cs" />
