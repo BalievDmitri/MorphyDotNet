@@ -42,6 +42,8 @@
             // 
             // dictionaryPath_textBox
             // 
+            this.dictionaryPath_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dictionaryPath_textBox.Location = new System.Drawing.Point(12, 25);
             this.dictionaryPath_textBox.Name = "dictionaryPath_textBox";
             this.dictionaryPath_textBox.Size = new System.Drawing.Size(695, 20);
@@ -50,6 +52,7 @@
             // 
             // browse_button
             // 
+            this.browse_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.browse_button.Location = new System.Drawing.Point(713, 23);
             this.browse_button.Name = "browse_button";
             this.browse_button.Size = new System.Drawing.Size(75, 23);
@@ -73,6 +76,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.parses_listBox);
             this.panel1.Controls.Add(this.wordToParse_textBox);
@@ -93,6 +99,8 @@
             // 
             // wordToParse_textBox
             // 
+            this.wordToParse_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wordToParse_textBox.Location = new System.Drawing.Point(7, 20);
             this.wordToParse_textBox.Name = "wordToParse_textBox";
             this.wordToParse_textBox.Size = new System.Drawing.Size(766, 20);
@@ -101,6 +109,9 @@
             // 
             // parses_listBox
             // 
+            this.parses_listBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.parses_listBox.FormattingEnabled = true;
             this.parses_listBox.Location = new System.Drawing.Point(7, 59);
             this.parses_listBox.Name = "parses_listBox";
@@ -125,6 +136,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.browse_button);
             this.Controls.Add(this.dictionaryPath_textBox);
+            this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "Form1";
             this.Text = "Проверка работы MorphyDotNet";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
