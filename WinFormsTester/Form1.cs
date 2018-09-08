@@ -23,20 +23,28 @@ namespace WinFormsTester
                
         private void Form1_Load(object sender, EventArgs e)
         {
+            // On startup, we want to load StartupDictionaryPath from settings 
+            // and try to create a MorphAnalizer
             m_dictionaryPath = Properties.Settings.Default.StartupDictionaryPath;
+            // We don't want to show a messageBox in case of exceptions at load time
             CreateMorphAnalizer(supressExceptions: true);
+
             dictionaryPath_textBox.Text = m_dictionaryPath;
             dictionaryPath_folderBrowserDialog.SelectedPath = m_dictionaryPath;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
+            // If MorphAnalizer was successfully created at load time
+            // we want to give focus to wordToParse_textBox so the user can directly start typing
             if (m_morphAnalyzer != null)
                 wordToParse_textBox.Focus();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // If MorphAnalizer was successfully created, we want to save the dictionary path
+            // so we can use it at load time
             if (m_morphAnalyzer != null)
             {
                 Properties.Settings.Default.StartupDictionaryPath = m_dictionaryPath;
