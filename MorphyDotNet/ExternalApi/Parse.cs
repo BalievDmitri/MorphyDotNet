@@ -8,7 +8,7 @@ namespace MorphyDotNet.ExternalApi
     public class Parse
     {
         public string Word { get; }
-        public Tag Tag { get; } = new Tag();
+        public Tag Tag { get; }
         public string NormalForm { get; }
         public Parse Normalized { get; }
         public double Score { get; }
@@ -16,9 +16,10 @@ namespace MorphyDotNet.ExternalApi
         public List<Parse> Lexeme { get; }
         public int Count { get; }
 
-        public Parse(string word)
+        public Parse(string word, Tag tag)
         {
             Word = word;
+            Tag = tag;
         }
 
         public Parse MakeAgreeWithNumber(int number) => this;

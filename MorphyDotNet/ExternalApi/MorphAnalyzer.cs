@@ -17,13 +17,15 @@ namespace MorphyDotNet.ExternalApi
 
         public List<Parse> Parse(string word)
         {
-            List<string> parses = m_dictionary.MatchPrefix(word);
-            List<Parse> results = new List<Parse>();
-            foreach(string parse in parses)
-            {
-                results.Add(new Parse(parse));
-            }
-            return results;
+            //List<string> parses = m_dictionary.MatchPrefix(word);
+            //List<Parse> results = new List<Parse>();
+            //foreach(string parse in parses)
+            //{
+            //    results.Add(new Parse(parse));
+            //}
+            //return results;
+
+            return m_dictionary.MatchParses(word);
         }
     }
 }
