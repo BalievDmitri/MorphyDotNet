@@ -9,6 +9,8 @@ namespace MorphyDotNet.ExternalApi
     {
         public string Word { get; }
         public Tag Tag { get; }
+
+        // To be done
         public string NormalForm { get; }
         public Parse Normalized { get; }
         public double Score { get; }
@@ -16,12 +18,15 @@ namespace MorphyDotNet.ExternalApi
         public List<Parse> Lexeme { get; }
         public int Count { get; }
 
-        public Parse(string word, Tag tag)
+        // Parse is just a container object for word information and should be created via MorphAnalyzer
+        // So we make it's constructor internal
+        internal Parse(string word, Tag tag)
         {
             Word = word;
             Tag = tag;
         }
 
+        // To be done
         public Parse MakeAgreeWithNumber(int number) => this;
         public Parse Inflect() => this;
 

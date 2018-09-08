@@ -5,7 +5,9 @@ using System.Text;
 
 namespace MorphyDotNet.ExternalApi
 {
-    public class Grammeme
+    // This part of the API is not currently used.
+    // For now, we make it internal.
+    internal class Grammeme
     {
         public string IntrenalId { get; }
         public string ExternalId { get; }
