@@ -88,7 +88,7 @@ namespace MorphyDotNet.DictUtils
         public List<Parse> MatchParses(string word)
         {
             List<Parse> result = new List<Parse>();
-            var pairs = m_dictionary.MatchPrefix(word + "\x01");
+            var pairs = m_dictionary.MatchPrefix(word.ToLower() + "\x01");
 
             foreach (var pair in pairs)
             {
