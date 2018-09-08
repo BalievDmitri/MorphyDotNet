@@ -11,19 +11,39 @@ namespace MorphyDotNet.DictUtils
 {
     internal class WordDictionary
     {
+        static readonly NLog.Logger s_logger = NLog.LogManager.GetCurrentClassLogger();
         Dawg<bool> m_dictionary;
         Suffixes m_tags;
         List<List<int>> m_paradigms;
 
-        public WordDictionary(string fileName)
+        public WordDictionary(string fileName, Suffixes tags, List<List<int>> paradigms)
         {
-            using (FileStream stream = File.OpenRead(fileName))
+            if (!File.Exists(fileName))
             {
-                m_dictionary = Dawg<bool>.Load(stream);
+                s_logger.Error($"Could not create WordDictionary because the file '{fileName}' specified as fileName does not exist.");
+                throw new DirectoryNotFoundException($"File '{fileName}' specified by fileName was not found.");
             }
-            m_tags = new Suffixes(@"E:\Workspace\pymorphy2_tests\gramtab-opencorpora-int.json");
-            var paradigmReader = new ParadigmsReader();
-            m_paradigms = paradigmReader.ReadFromFile(@"E:\Workspace\pymorphy2_tests\paradigms.array");
+
+            try
+            {
+                using (FileStream stream = File.OpenRead(fileName))
+                {
+                    m_dictionary = Dawg<bool>.Load(stream);
+                }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                s_logger.Error(ex, $"UnauthorizedAccessException in WordDictionary constructor.");
+                throw;
+            }
+            catch (IOException ex)
+            {
+                s_logger.Error(ex, $"IOException in WordDictionary constructor.");
+                throw;
+            }
+
+            m_tags = tags;
+            m_paradigms = paradigms;
         }
 
         public WordDictionary(Stream stream)
