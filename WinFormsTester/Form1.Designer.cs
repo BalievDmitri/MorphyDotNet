@@ -67,6 +67,10 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Расположение файла со словарями:";
             // 
+            // dictionaryPath_folderBrowserDialog
+            // 
+            this.dictionaryPath_folderBrowserDialog.ShowNewFolderButton = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
@@ -123,6 +127,9 @@
             this.Controls.Add(this.dictionaryPath_textBox);
             this.Name = "Form1";
             this.Text = "Проверка работы MorphyDotNet";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

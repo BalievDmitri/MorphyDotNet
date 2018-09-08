@@ -20,8 +20,31 @@ namespace WinFormsTester
         {
             InitializeComponent();
         }
-        
-        void CreateMorphAnalizer()
+               
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            m_dictionaryPath = Properties.Settings.Default.StartupDictionaryPath;
+            CreateMorphAnalizer(supressExceptions: true);
+            dictionaryPath_textBox.Text = m_dictionaryPath;
+            dictionaryPath_folderBrowserDialog.SelectedPath = m_dictionaryPath;
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            if (m_morphAnalyzer != null)
+                wordToParse_textBox.Focus();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (m_morphAnalyzer != null)
+            {
+                Properties.Settings.Default.StartupDictionaryPath = m_dictionaryPath;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        void CreateMorphAnalizer(bool supressExceptions = false)
         {
             try
             {
@@ -29,15 +52,18 @@ namespace WinFormsTester
             }
             catch (DirectoryNotFoundException)
             {
-                MessageBox.Show("DirectoryNotFoundException.");
+                if (!supressExceptions)
+                    MessageBox.Show("DirectoryNotFoundException.");
             }
             catch (UnauthorizedAccessException)
             {
-                MessageBox.Show("UnauthorizedAccessException.");
+                if (!supressExceptions)
+                    MessageBox.Show("UnauthorizedAccessException.");
             }
             catch (IOException)
             {
-                MessageBox.Show("IOException.");
+                if (!supressExceptions)
+                    MessageBox.Show("IOException.");
             }
         }
 
@@ -70,5 +96,6 @@ namespace WinFormsTester
             foreach(var parse in parses)
                 parses_listBox.Items.Add(parse);
         }
+
     }
 }
