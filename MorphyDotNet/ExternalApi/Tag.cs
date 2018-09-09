@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MorphyDotNet.ExternalApi
+namespace MorphyDotNet
 {
     /// <summary>
     /// Container for a list of grammemes. Used to caracterize a word during parsing, or in some transormation operations.

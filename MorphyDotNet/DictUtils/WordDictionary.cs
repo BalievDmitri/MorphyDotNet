@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using DawgSharp;
-using MorphyDotNet.ExternalApi;
 using MorphyDotNet.Paradigms;
 
 namespace MorphyDotNet.DictUtils

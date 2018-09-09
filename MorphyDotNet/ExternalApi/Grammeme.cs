@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MorphyDotNet.ExternalApi
+namespace MorphyDotNet
 {
     // This part of the API is not currently used.
     // For now, we make it internal.

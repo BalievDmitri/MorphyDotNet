@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace MorphyDotNet.ExternalApi
+namespace MorphyDotNet
 {
     /// <summary>
     /// Main class of MorphyDotNet.

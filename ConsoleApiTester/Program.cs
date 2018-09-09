@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MorphyDotNet.ExternalApi;
+using MorphyDotNet;
 using MorphyDotNet.Paradigms;
 
 namespace ConsoleApiTester
