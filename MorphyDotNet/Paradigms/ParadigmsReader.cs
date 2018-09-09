@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace MorphyDotNet.DictUtils
+namespace MorphyDotNet.Paradigms
 {
     // This is a reader that parses the binary file containing paradigm data
     // It returns lists of int wich is stupid. 

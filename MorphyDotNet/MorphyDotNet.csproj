@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DictUtils\ParadigmsReader.cs" />
+    <Compile Include="Paradigms\ParadigmsReader.cs" />
     <Compile Include="DictUtils\WordDictionary.cs" />
     <Compile Include="ExternalApi\Grammeme.cs" />
     <Compile Include="ExternalApi\MorphAnalyzer.cs" />
