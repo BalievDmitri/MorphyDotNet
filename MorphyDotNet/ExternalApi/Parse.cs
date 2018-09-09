@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MorphyDotNet
 {
-    public class Parse
+    public sealed class Parse
     {
         public string Word { get; }
         public Tag Tag { get; }

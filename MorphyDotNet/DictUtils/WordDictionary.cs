@@ -10,7 +10,7 @@ namespace MorphyDotNet.DictUtils
 {
     // This a utility class that provides dictionary loading and matching operations
     // It should never be accessed directly, so we make it internal
-    internal class WordDictionary
+    internal sealed class WordDictionary
     {
         static readonly NLog.Logger s_logger = NLog.LogManager.GetCurrentClassLogger();
         Dawg<bool> m_dictionary;

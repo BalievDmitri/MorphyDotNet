@@ -12,7 +12,7 @@ namespace MorphyDotNet
     /// Main class of MorphyDotNet.
     /// It uses a dictionary to provide morphological parsing of words.
     /// </summary>
-    public class MorphAnalyzer
+    public sealed class MorphAnalyzer
     {
         static readonly NLog.Logger s_logger = NLog.LogManager.GetCurrentClassLogger();
         WordDictionary m_dictionary;

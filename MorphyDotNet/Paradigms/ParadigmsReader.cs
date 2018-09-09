@@ -9,7 +9,7 @@ namespace MorphyDotNet.Paradigms
     // This is a reader that parses the binary file containing paradigm data
     // It returns lists of int wich is stupid. 
     // A wrapper will be made later to provide a more coherent structure
-    internal class ParadigmsReader
+    internal sealed class ParadigmsReader
     {
         public List<List<int>> ReadFromFile(string fileName)
         {

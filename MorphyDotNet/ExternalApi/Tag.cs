@@ -8,7 +8,7 @@ namespace MorphyDotNet
     /// <summary>
     /// Container for a list of grammemes. Used to caracterize a word during parsing, or in some transormation operations.
     /// </summary>
-    public class Tag
+    public sealed class Tag
     {
         // This will be used later
         List<Grammeme> m_grammemes = new List<Grammeme>() { new Grammeme("NOUN", "СУЩ", "имя существительное", null) };
