@@ -33,7 +33,7 @@ namespace MorphyDotNet.ExternalApi
             }
 
             // As the top-level entity of the library, we create all needed objects and distribute them here.
-            var tags = new Suffixes(Path.Combine(dictionaryFolderPath, "gramtab-opencorpora-int.json"));
+            var tags = new ParadigmJsonStrings(Path.Combine(dictionaryFolderPath, "gramtab-opencorpora-int.json"));
 
             var paradigms = new ParadigmsReader().ReadFromFile(Path.Combine(dictionaryFolderPath, "paradigms.array"));
 

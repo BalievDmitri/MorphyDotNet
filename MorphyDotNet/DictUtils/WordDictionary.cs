@@ -15,10 +15,10 @@ namespace MorphyDotNet.DictUtils
     {
         static readonly NLog.Logger s_logger = NLog.LogManager.GetCurrentClassLogger();
         Dawg<bool> m_dictionary;
-        Suffixes m_tags;
+        ParadigmJsonStrings m_tags;
         List<List<int>> m_paradigms;
 
-        public WordDictionary(string fileName, Suffixes tags, List<List<int>> paradigms)
+        public WordDictionary(string fileName, ParadigmJsonStrings tags, List<List<int>> paradigms)
         {
             if (!File.Exists(fileName))
             {
@@ -48,7 +48,7 @@ namespace MorphyDotNet.DictUtils
             m_paradigms = paradigms;
         }
 
-        public WordDictionary(Stream stream, Suffixes tags, List<List<int>> paradigms)
+        public WordDictionary(Stream stream, ParadigmJsonStrings tags, List<List<int>> paradigms)
         {
             LoadDictionary(stream);
             m_tags = tags;
@@ -93,7 +93,7 @@ namespace MorphyDotNet.DictUtils
 
                 int n = m_paradigms[paradigm].Count();
                 int tagIndex = m_paradigms[paradigm][n / 3 + paradigmIndex];
-                string tag = m_tags.GetSuffix(tagIndex);
+                string tag = m_tags.GetString(tagIndex);
 
                 result.Add(new Parse(word, new Tag(tag)));
             }
@@ -126,7 +126,7 @@ namespace MorphyDotNet.DictUtils
                 // This should probably be later wrapped in a container
                 int n = m_paradigms[paradigm].Count();
                 int tagIndex = m_paradigms[paradigm][n / 3 + paradigmIndex];
-                string tag = m_tags.GetSuffix(tagIndex);
+                string tag = m_tags.GetString(tagIndex);
 
                 result.Add(new Parse(word, new Tag(tag)));
             }

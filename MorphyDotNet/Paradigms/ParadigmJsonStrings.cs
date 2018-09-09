@@ -7,41 +7,42 @@ using Newtonsoft.Json;
 
 namespace MorphyDotNet.Paradigms
 {
-    internal sealed class Suffixes
+    // This class allows to load a Json file with string definitions for suffixes, tags and prefixes of a paradigm
+    internal sealed class ParadigmJsonStrings
     {
-        List<string> m_suffixes;
+        List<string> m_strings;
 
-        public Suffixes(string fileName)
+        public ParadigmJsonStrings(string fileName)
         {
             using (FileStream stream = File.OpenRead(fileName))
+            {
                 Load(stream);
+            }
         }
         
-        public Suffixes(Stream stream)
+        public ParadigmJsonStrings(Stream stream)
         {
             Load(stream);
         }
 
+        // We just load all strings in Json array into m_strings
         void Load(Stream stream)
         {
-            m_suffixes = new List<string>();
-            //using (TextReader reader = new StreamReader(stream))
-            //{
-            //    reader.re
-            //}
+            m_strings = new List<string>();
+            
             using (JsonTextReader reader = new JsonTextReader(new StreamReader(stream)))
             {
                 while(reader.Read())
                 {
                     if (reader.Value != null)
-                        m_suffixes.Add(reader.Value.ToString());
+                        m_strings.Add(reader.Value.ToString());
                 }
             }
         }
 
-        public string GetSuffix(int index)
+        public string GetString(int index)
         {
-            return m_suffixes[index];
+            return m_strings[index];
         }
     }
 }

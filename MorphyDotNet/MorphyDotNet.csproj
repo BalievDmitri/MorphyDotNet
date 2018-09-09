@@ -59,7 +59,7 @@
     <Compile Include="ExternalApi\MorphAnalyzer.cs" />
     <Compile Include="ExternalApi\Parse.cs" />
     <Compile Include="ExternalApi\Tag.cs" />
-    <Compile Include="Paradigms\Suffixes.cs" />
+    <Compile Include="Paradigms\ParadigmJsonStrings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
