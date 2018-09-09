@@ -5,6 +5,9 @@ using System.Text;
 
 namespace MorphyDotNet
 {
+    /// <summary>
+    /// Container for information regarding a word morphological parse
+    /// </summary>
     public sealed class Parse
     {
         public string Word { get; }
