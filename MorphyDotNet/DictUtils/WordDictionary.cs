@@ -105,7 +105,7 @@ namespace MorphyDotNet.DictUtils
         public List<Parse> MatchParses(string word)
         {
             // We store our words in format
-            // 'Word' + '\x01\ + paradigm_id + '\x01' + paradigm_index
+            // 'Word' + '\x01' + paradigm_id + '\x01' + paradigm_index
 
             List<Parse> result = new List<Parse>();
             // Our dictionary contains only lower case versions of words
