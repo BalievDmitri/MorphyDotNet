@@ -109,6 +109,8 @@ namespace MorphyDotNet.DictUtils
 
             List<Parse> result = new List<Parse>();
             // Our dictionary contains only lower case versions of words
+            // We add '\x01' so that we get only the needed word variants
+            // and not all words starting with it
             var pairs = m_dictionary.MatchPrefix(word.ToLower() + "\x01");
 
             // Dawg stores pairs of a string key and a payload.
