@@ -37,3 +37,4 @@ using System.Runtime.InteropServices;
 
 [assembly: InternalsVisibleTo("ConsoleApiTester")]
 [assembly: InternalsVisibleTo("MorphyDotNet.Tests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
