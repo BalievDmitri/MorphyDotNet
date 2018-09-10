@@ -14,9 +14,9 @@ namespace MorphyDotNet.DictUtils
     {
         static readonly NLog.Logger s_logger = NLog.LogManager.GetCurrentClassLogger();
         IWordMatchingDictionary m_wordMatchingDictionary;
-        ParadigmsCollection m_paradigms;
+        IParadigmsCollection m_paradigms;
 
-        public WordDictionary(IWordMatchingDictionary dictionary, ParadigmsCollection paradigms)
+        public WordDictionary(IWordMatchingDictionary dictionary, IParadigmsCollection paradigms)
         {
             m_wordMatchingDictionary = dictionary;
             m_paradigms = paradigms;

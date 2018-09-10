@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MorphyDotNet.Paradigms
 {
-    internal sealed class ParadigmsCollection
+    internal sealed class ParadigmsCollection : IParadigmsCollection
     {
         List<Paradigm> m_paradigms;
 
