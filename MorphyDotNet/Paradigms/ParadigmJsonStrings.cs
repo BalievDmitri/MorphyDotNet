@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace MorphyDotNet.Paradigms
 {
     // This class allows to load a Json file with string definitions for suffixes, tags and prefixes of a paradigm
-    internal sealed class ParadigmJsonStrings
+    internal sealed class ParadigmJsonStrings : IParadigmStrings
     {
         List<string> m_strings;
 

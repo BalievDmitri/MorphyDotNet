@@ -56,6 +56,7 @@
     <Compile Include="DictUtils\DawgSharpDictionary.cs" />
     <Compile Include="DictUtils\DictionaryMatch.cs" />
     <Compile Include="DictUtils\IWordMatchingDictionary.cs" />
+    <Compile Include="Paradigms\IParadigmStrings.cs" />
     <Compile Include="Paradigms\ParadigmsReader.cs" />
     <Compile Include="DictUtils\WordDictionary.cs" />
     <Compile Include="ExternalApi\Grammeme.cs" />
