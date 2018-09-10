@@ -6,9 +6,10 @@ using System.Text;
 
 namespace MorphyDotNet.Paradigms
 {
-    // This is a reader that parses the binary file containing paradigm data
-    // It returns lists of int wich is stupid. 
-    // A wrapper will be made later to provide a more coherent structure
+    /// <summary>
+    /// This is a reader that parses the binary file containing paradigm data
+    /// and returns a ParadigmsCollection
+    /// </summary>
     internal sealed class ParadigmsReader
     {
         public ParadigmsCollection ReadFromFile(string fileName, IParadigmStrings tags)
@@ -19,6 +20,8 @@ namespace MorphyDotNet.Paradigms
             return result;
         }
 
+        // This method is long, but I prefer not to split it because it performs a rather low level file parsing,
+        // and it will be easier to maintain this way
         public ParadigmsCollection ReadFromStream(Stream stream, IParadigmStrings tags)
         {
             var paradigms = new List<Paradigm>();

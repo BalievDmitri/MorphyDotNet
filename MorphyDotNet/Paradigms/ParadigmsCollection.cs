@@ -5,6 +5,10 @@ using System.Text;
 
 namespace MorphyDotNet.Paradigms
 {
+    /// <summary>
+    /// This is a container for a collection of paradigms.
+    /// You can create one via ParadigmsReader.
+    /// </summary>
     internal sealed class ParadigmsCollection : IParadigmsCollection
     {
         List<Paradigm> m_paradigms;
