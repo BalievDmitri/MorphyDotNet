@@ -14,10 +14,10 @@ namespace MorphyDotNet.DictUtils
     {
         static readonly NLog.Logger s_logger = NLog.LogManager.GetCurrentClassLogger();
         IWordMatchingDictionary m_wordMatchingDictionary;
-        ParadigmJsonStrings m_tags;
+        IParadigmStrings m_tags;
         List<List<int>> m_paradigms;
 
-        public WordDictionary(IWordMatchingDictionary dictionary, ParadigmJsonStrings tags, List<List<int>> paradigms)
+        public WordDictionary(IWordMatchingDictionary dictionary, IParadigmStrings tags, List<List<int>> paradigms)
         {
             m_wordMatchingDictionary = dictionary;
             m_tags = tags;
