@@ -33,11 +33,13 @@ namespace MorphyDotNet
             }
 
             // As the top-level entity of the library, we create all needed objects and distribute them here.
-            var tags = new ParadigmJsonStrings(Path.Combine(dictionaryFolderPath, "gramtab-opencorpora-int.json"));
+            DawgSharpDictionary dawgDictionary = new DawgSharpDictionary(Path.Combine(dictionaryFolderPath, "dict.dawgsharp"));
+
+            ParadigmJsonStrings tags = new ParadigmJsonStrings(Path.Combine(dictionaryFolderPath, "gramtab-opencorpora-int.json"));
 
             var paradigms = new ParadigmsReader().ReadFromFile(Path.Combine(dictionaryFolderPath, "paradigms.array"));
 
-            m_dictionary = new WordDictionary(Path.Combine(dictionaryFolderPath, "dict.dawgsharp"), tags, paradigms);
+            m_dictionary = new WordDictionary(dawgDictionary, tags, paradigms);
         }
 
         /// <summary>
