@@ -37,8 +37,7 @@ namespace MorphyDotNet
 
             ParadigmJsonStrings tags = new ParadigmJsonStrings(Path.Combine(dictionaryFolderPath, "gramtab-opencorpora-int.json"));
 
-            var paradigms = new ParadigmsReader().ReadFromFile(Path.Combine(dictionaryFolderPath, "paradigms.array"));
-            var paradigmsCollection = new ParadigmsCollection(paradigms, tags);
+            var paradigmsCollection = new ParadigmsReader().ReadFromFile(Path.Combine(dictionaryFolderPath, "paradigms.array"), tags);
 
             m_dictionary = new WordDictionary(dawgDictionary, paradigmsCollection);
         }

@@ -33,7 +33,7 @@ namespace MorphyDotNet.DictUtils
             foreach (var pair in pairs)
             {
                 Tag tag = m_paradigms.GetTag(pair.ParadigmId, pair.ParadigmIndex);
-
+                
                 result.Add(new Parse(word, tag));
             }
 
