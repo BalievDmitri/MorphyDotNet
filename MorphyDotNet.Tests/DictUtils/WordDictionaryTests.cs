@@ -27,10 +27,10 @@ namespace MorphyDotNet.Tests.DictUtils
             var dictMock = new Mock<IWordMatchingDictionary>();
             dictMock.Setup(dict => dict.MatchWord(It.IsAny<string>())).Returns(dictionaryParseResult);
 
-            var tagsMoq = new Mock<IParadigmStrings>();
-            tagsMoq.Setup(tag => tag.GetString(It.IsAny<int>())).Returns("Tag");
+            var paradigmsMoq = new Mock<IParadigmsCollection>();
+            paradigmsMoq.Setup(tag => tag.GetTag(It.IsAny<int>(), It.IsAny<int>())).Returns(new Tag("Tag"));
             
-            var sut = new WordDictionary(dictMock.Object, tagsMoq.Object, new List<List<int>>() { new List<int>() { 0 } });
+            var sut = new WordDictionary(dictMock.Object, paradigmsMoq.Object);
 
             // Act
             var expected = numberOfWords;
